@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run --theme.base "dark" app.py
