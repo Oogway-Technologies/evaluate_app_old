@@ -23,15 +23,20 @@ def prepare_layout():
     st.sidebar.markdown('#### Instructions:')
     instructions = """
     1. Select a product on the drop-down box below to review a list of pros-cons comparing two similar products
-       on Amazon; OR
-    2. Use the search boxes to paste the URL of two Amazon products and calculate pros-cons on-the-fly (
-       this can take some time):
+       on Amazon (recommended)
+       
+    OR
+    
+    2. Use the search boxes to paste the URL of two Amazon products and calculate pros-cons on-the-fly (it takes about 
+    2 minutes):
         * [https://www.amazon.com/Celestron-71198-Cometron...](https://www.amazon.com/Celestron-71198-Cometron-Binoculars-Black/dp/B00DV6SI3Q?ref_=Oct_DLandingS_D_1318bab5_61&smid=ATVPDKIKX0DER&th=1)
         * [https://www.amazon.com/SWAROVSKI-10x42-NL-Pure-...](https://www.amazon.com/SWAROVSKI-10x42-NL-Pure-Binoculars/dp/B08HP9LMQ8/ref=sr_1_77?crid=251XT9ZSI48AU&keywords=binoculars&qid=1639191462&refinements=p_72%3A1248882011&rnid=1248877011&s=electronics&sprefix=bino%2Celectronics%2C184&sr=1-77&th=1)
     """
     st.sidebar.markdown(instructions)
     selected = st.sidebar.selectbox('Products:', CACHED_PRODUCTS_LIST,
                                     format_func=lambda x: 'Select a product' if x == '' else x)
+    st.sidebar.markdown("**Note**: to use your own URLs be sure that the drop-down menu is defaulted to "
+                        "'Select a product' and that the two search boxes on the right are empty")
     if selected:
         curr_url_1, curr_url_2 = get_url_from_product_map(selected)
 

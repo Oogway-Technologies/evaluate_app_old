@@ -6,7 +6,11 @@ def get_url_from_product_map(product: str):
     prod_map = {
         'Books': [PROD_BOOK_URL_1, PROD_BOOK_URL_2],
         'Binoculars': [PROD_BINOCULARS_URL_1, PROD_BINOCULARS_URL_2],
+        'Digital Camera': [PROD_DIGITAL_CAMERA_URL_1, PROD_DIGITAL_CAMERA_URL_2],
+        'Headphones': [PROD_HEADPHONES_URL_1, PROD_HEADPHONES_URL_2],
         'Sneakers': [PROD_SNEAKERS_URL_1, PROD_SNEAKERS_URL_2],
+        'Toothpaste': [PROD_TOOTHPASTE_URL_1, PROD_TOOTHPASTE_URL_2],
+        'Videogames': [PROD_VIDEOGAME_URL_1, PROD_VIDEOGAME_URL_2],
     }
     if product in prod_map:
         return prod_map[product][0], prod_map[product][1]
